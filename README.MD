@@ -124,7 +124,7 @@ API Node.js para gerenciamento de clientes, autenticação via JWT e controle de
 
 ## Banco de Dados
 
-* O schema é criado automaticamente via o arquivo `init.sql`.
+* O schema precisa ser criado com base no arquivo `init.sql`.
 * Tabela principal: `clients`.
 
 ---
