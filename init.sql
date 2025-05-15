@@ -3,7 +3,7 @@ CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 CREATE TABLE IF NOT EXISTS public.clients (
     id uuid DEFAULT gen_random_uuid() NOT NULL,
     name character varying(255) NOT NULL,
-    document_id character varying(20) NOT NULL,
+    document_id character varying(20) NOT NULL UNIQUE,
     document_type character varying(10) NOT NULL,
     plan_type character varying(10) NOT NULL,
     balance numeric(10,2) DEFAULT 0,
