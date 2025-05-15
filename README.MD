@@ -85,8 +85,9 @@ API Node.js para gerenciamento de clientes, autenticação via JWT e controle de
     "limit": 0,
     "active": true,
     "is_admin": true //false ou true
-}
-    ```
+   }
+   ```
+
   * Body: dados do cliente
   * Cria um novo cliente
 
@@ -95,6 +96,19 @@ API Node.js para gerenciamento de clientes, autenticação via JWT e controle de
   * Busca cliente por ID
 
 * `PUT /clients/:id`
+
+   ```json
+    {
+    "name": "John Doe",
+    "documentId": "123",
+    "documentType": "CPF", //CPF ou CNPJ
+    "planType": "postpaid", //  postpaid ou prepaid
+    "balance": 0,
+    "limit": 0,
+    "active": true,
+    "is_admin": true //false ou true
+   }
+   ```
 
   * Body: dados do cliente
   * Atualiza cliente
