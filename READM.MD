@@ -1,0 +1,136 @@
+```markdown
+# API de Gerenciamento de Clientes
+API Node.js para gerenciamento de clientes, autenticação via JWT e controle de acesso administrativo, utilizando Express e PostgreSQL e Docker.
+---
+```
+
+```
+## Estrutura do Projeto
+
+├── src/
+│   ├── app.js
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   └── clientController.js
+│   ├── database/
+│   │   └── database.js
+│   ├── middlewares/
+│   │   └── authMiddleware.js
+│   └── routes/
+│       ├── authRoutes.js
+│       └── clientRoutes.js
+├── init.sql
+├── package.json
+├── Dockerfile
+├── docker-compose.yml
+├── .env
+└── .gitignore
+```
+
+---
+
+## Instalação
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/lorenzospada/Irrah-tech-challenge.git
+   cd teste
+
+2. Configure as variáveis de ambiente:
+
+   * Edite o arquivo `.env` conforme necessário (exemplo disponível).
+
+3. Suba os containers com Docker Compose:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+   Isso irá iniciar o banco de dados PostgreSQL e a aplicação Node.js.
+
+---
+
+## Endpoints
+
+### Autenticação
+
+* `POST /auth`
+
+  * Body:
+
+    ```json
+    { "documentId": "..." }
+    ```
+  * Retorno:
+
+    ```json
+    { "token": "..." }
+    ```
+
+### Clientes
+
+* `GET /clients`
+
+  * Requer token JWT de admin
+  * Lista todos os clientes
+
+* `POST /clients`
+
+  * Body: dados do cliente
+  * Cria um novo cliente
+
+* `GET /clients/:id`
+
+  * Busca cliente por ID
+
+* `PUT /clients/:id`
+
+  * Body: dados do cliente
+  * Atualiza cliente
+
+* `GET /clients/:id/balance`
+
+  * Requer token JWT
+  * Consulta saldo do cliente
+
+---
+
+## Banco de Dados
+
+* O schema é criado automaticamente via o arquivo `init.sql`.
+* Tabela principal: `clients`.
+
+---
+
+## Scripts
+
+* `npm run dev` — Inicia o servidor em modo desenvolvimento com `nodemon`.
+
+---
+
+## Variáveis de Ambiente
+
+Veja o arquivo `.env` para exemplos de configuração, incluindo:
+
+* `PORT`
+* `DATABASE_URL`
+* `JWT_SECRET`
+
+---
+
+## Observações
+
+* O acesso a rotas administrativas requer que o campo `is_admin` do cliente seja `true`.
+* O login é feito apenas com `documentId` (sem senha, para fins de demonstração).
+
+---
+
+## Licença
+ISC
+---
+
+## Autor
+# Lorenzo Spada
+
+
+
