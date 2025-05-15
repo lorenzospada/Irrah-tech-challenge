@@ -34,7 +34,6 @@ API Node.js para gerenciamento de clientes, autenticação via JWT e controle de
 1. Clone o repositório:
    ```bash
    git clone https://github.com/lorenzospada/Irrah-tech-challenge.git
-   cd teste
 
 2. Configure as variáveis de ambiente:
 
