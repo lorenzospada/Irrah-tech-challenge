@@ -75,6 +75,9 @@ API Node.js para gerenciamento de clientes, autenticação via JWT e controle de
 
 * `POST /clients`
 
+   ```json
+    {"name": "...","documentId": "...","documentType": "...","planType": "...","balance": 0,"limit": 0,"active": ...,"is_admin": ... }
+    ```
   * Body: dados do cliente
   * Cria um novo cliente
 
