@@ -19,7 +19,7 @@ services:
 
   db:
     image: postgres:15
-    container_name: postgres_db
+    container_name: postgres
     restart: always
     environment:
       POSTGRES_USER: postgres
@@ -28,7 +28,7 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
 volumes:
   postgres_data:
