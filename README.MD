@@ -1,6 +1,6 @@
 ```markdown
 # API de Gerenciamento de Clientes
-API Node.js para gerenciamento de clientes, autenticação via JWT e controle de acesso administrativo, utilizando Express e PostgreSQL e Docker.
+API Node.js para gerenciamento de clientes, autenticação via JWT e controle de acesso administrativo, utilizando Express e PostgreSQL e Docker + Dbeaver.
 ---
 ```
 
@@ -44,9 +44,11 @@ API Node.js para gerenciamento de clientes, autenticação via JWT e controle de
    ```bash
    docker-compose up --build
    ```
+   Isso irá: 
+   -Instalar automaticamente as dependências com npm install.
+   -iniciar o banco de dados PostgreSQL e a aplicação Node.js.
 
-   Isso irá iniciar o banco de dados PostgreSQL e a aplicação Node.js.
-
+4. Crie a tabela com os dados do init.sql
 ---
 
 ## Endpoints
